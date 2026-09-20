@@ -67,9 +67,29 @@ Repeats the analysis per division (ADM1).
 ## Requirements
 
 - A Google Earth Engine account with a Cloud project.
-- An admin boundary asset with `ADM1_EN`, `ADM2_EN` and `ADM3_EN` properties. The scripts were written against the Bangladesh OCHA COD administrative boundaries, uploaded as a personal asset.
+- The Bangladesh administrative boundaries, uploaded as an Earth Engine table asset (see below).
 
 Set `ASSET` and `ADM_ASSET` to your own project paths before running. The `xxxxxx` in the asset paths is a redacted Cloud project ID — replace it with your own.
+
+### Getting the admin boundaries
+
+The boundary file is not included in this repository — it is over 100 MB, and the authoritative version is maintained elsewhere. Download it yourself:
+
+1. Go to the [Bangladesh Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-bgd) dataset on HDX.
+2. Download the shapefile archive. These are the OCHA Common Operational Datasets, so the attribute names (`ADM1_EN`, `ADM2_EN`, `ADM3_EN`) match what the scripts expect.
+3. Unzip it. You need the ADM3 (upazila) layer — the file name will contain `adm3`.
+
+Then upload it to Earth Engine:
+
+1. In the Code Editor, open the **Assets** tab in the left panel.
+2. Click **New → Table upload → Shapefiles**.
+3. Select the `.shp` file *together with* its `.dbf`, `.shx` and `.prj` siblings, or zip them and upload the zip. All four are required — uploading the `.shp` alone will fail or lose the attributes.
+4. Give it an asset name and wait for the ingestion task to finish.
+5. Click the finished asset to see its full path, and paste that into `ADM_ASSET`.
+
+The scripts read `ADM1_EN` (division), `ADM2_EN` (district) and `ADM3_EN` (upazila). If a future version of the COD file renames these, adjust the `select` list and the `p.ADM1_EN` reference in script 3.
+
+Attribution and licensing for the boundary data are as stated on the HDX dataset page.
 
 ---
 
