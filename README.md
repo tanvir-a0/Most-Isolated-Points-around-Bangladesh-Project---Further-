@@ -17,6 +17,10 @@ tangent to it — a visual proof that nothing is closer.*
 
 ## How it works
 
+<p align="center">
+  <img src="docs/images/project_workflow.png" alt="Project workflow: build the building mask, then find the points" width="560">
+</p>
+
 The problem is a *pole of inaccessibility* — the centre of the largest empty circle that fits between buildings. It is solved as a raster distance transform:
 
 1. Mark every 100 m grid cell that contains a building.
