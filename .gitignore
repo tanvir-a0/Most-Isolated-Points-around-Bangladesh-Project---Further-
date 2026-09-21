@@ -1,0 +1,8 @@
+# Exported imagery and derived pages: large, regenerable from the scripts.
+# A few downscaled samples live in docs/images instead.
+Project_Further/
+*.tif
+*.tiff
+
+__pycache__/
+*.pyc
