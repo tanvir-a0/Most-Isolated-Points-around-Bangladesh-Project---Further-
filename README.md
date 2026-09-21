@@ -6,6 +6,9 @@ Finds the point in Bangladesh that is furthest from any building, using Google E
 
 For a country of ~148,000 km², that is a striking figure: nowhere in Bangladesh is more than about 10 km from a building.
 
+A ten-page visual summary of the project is in
+[`docs/Project-Further.pdf`](docs/Project-Further.pdf).
+
 ![The most remote point in Bangladesh, in the Sundarbans](docs/images/satkhira_most_remote.jpg)
 
 *The winner, in Satkhira district. The red dot is the remote point, the red
